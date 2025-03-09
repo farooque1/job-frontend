@@ -1,0 +1,14 @@
+.filter-container {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .search-box input {
+    width: 600px;
+  }
+  
+  .filter-dropdowns select {
+    width: 300px;
+  }
+  
