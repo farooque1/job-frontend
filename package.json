@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.24.1",
-    "advance-steppers": "^0.1.17",
     "apisauce": "^3.1.0",
     "axios": "^1.8.2",
     "bootstrap": "^5.3.3",
