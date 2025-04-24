@@ -18,12 +18,16 @@ export const APIAdminLogout = (payload, headers) => {
   return privateAPIClient.post(APIUrlStrings.logout, payload, { headers });
 };
 
-export const APIgetJobList = () => {
-  return privateAPIClient.get(APIUrlStrings.jobList);
+export const APIgetJobList = (payload) => {
+  return privateAPIClient.get(APIUrlStrings.jobList,payload);
 };
 
-export const APIgetJobDetails = (payload) => {
-  return privateAPIClient.get(APIUrlStrings.jobDetails, payload);
+export const APIgetJobDetails = (id) => {
+  return privateAPIClient.post(APIUrlStrings.jobDetails+ "/" + id);
+};
+
+export const APIgetJobLocation = (payload) => {
+  return privateAPIClient.post(APIUrlStrings.jobLocation,payload);
 };
 
 export const APIUploadLeads = (payload) => {

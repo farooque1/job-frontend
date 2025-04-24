@@ -1,58 +1,104 @@
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/clerk-react";
 import React from "react";
+import { FaBriefcase } from "react-icons/fa";
 
 function HeaderComponent() {
   return (
-    <>
-      <div class="container-fluid">
-        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-          <div class="col-md-3 mb-2 mb-md-0">
-            <a
-              href="/"
-              class="d-inline-flex link-body-emphasis text-decoration-none"
-            >
-              Job-me
-            </a>
-          </div>
+    <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div className="container">
+        {/* Logo */}
+        <a className="navbar-brand fw-bold text-primary" href="/">
+          JOB-ME <FaBriefcase className="ms-1" />
+        </a>
 
-          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li>
-              <a href="#" class="nav-link px-2 link-secondary">
+        {/* Toggler Button for Mobile */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        {/* Navbar Items */}
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav mx-auto">
+            <li className="nav-item">
+              <a className="nav-link active text-primary fw-semibold" href="#">
                 Home
               </a>
             </li>
-            <li>
-              <a href="#" class="nav-link px-2">
-                Features
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                Jobs
               </a>
             </li>
-            <li>
-              <a href="#" class="nav-link px-2">
-                Pricing
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                Companies
               </a>
             </li>
-            <li>
-              <a href="#" class="nav-link px-2">
-                FAQs
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                Pricing{" "}
               </a>
             </li>
-            <li>
-              <a href="#" class="nav-link px-2">
-                About
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                Contact
               </a>
             </li>
           </ul>
 
-          <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-outline-primary me-2">
-              Login
+          <SignedOut>
+            <SignInButton>
+              <button className="btn btn-primary">Login</button>
+            </SignInButton>
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+
+          {/* User Profile / Login */}
+          {/* <div className="dropdown">
+            <button
+              className="btn btn-primary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+            >
+              <FaUser className="me-1" /> Profile
             </button>
-            <button type="button" class="btn btn-primary">
-              Sign-up
-            </button>
-          </div>
-        </header>
+            <ul className="dropdown-menu dropdown-menu-end">
+              <li>
+                <a className="dropdown-item" href="#">
+                  <FaUser className="me-2" /> My Profile
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  <FaBriefcase className="me-2" /> My Jobs
+                </a>
+              </li>
+              <li>
+                <hr className="dropdown-divider" />
+              </li>
+              <li>
+                
+                <a className="dropdown-item text-danger" href="#">
+                  <FaSignInAlt className="me-2" /> Logout
+                </a>
+              </li>
+            </ul>
+          </div> */}
+        </div>
       </div>
-    </>
+    </nav>
   );
 }
 

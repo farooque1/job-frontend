@@ -1,0 +1,21 @@
+.custom-pagination-main-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+  
+    .page-link {
+      // background-color: pink;
+      font-size: 0.7rem;
+    }
+  
+    .active > .page-link,
+    .page-link.active {
+      z-index: 3;
+      color:black;
+      background-color: var(--lgi-blue);
+      border-color: var(--lgi-blue);
+    }
+  }

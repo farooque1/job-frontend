@@ -9,7 +9,7 @@ const JobListing = Loadable(
 );
 
 const JobsDetails = Loadable(
-  React.lazy(() => import("../components/pages/JobDetailComponent"))
+  React.lazy(() => import("../components/pages/JobDetailComponent/index"))
 );
 
 const RouteComponent = () => {
